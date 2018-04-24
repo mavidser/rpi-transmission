@@ -10,7 +10,4 @@ EXPOSE 9091
 EXPOSE 51413
 EXPOSE 51413/udp
 
-ENV USERNAME=admin
-ENV PASSWORD=admin
-
-ENTRYPOINT transmission-daemon -c /torrent_files -w downloaded -f -t -a *.*.*.* -u "$USERNAME" -v "$PASSWORD"
+ENTRYPOINT transmission-daemon -f -g /config
